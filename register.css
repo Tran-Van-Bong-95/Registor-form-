@@ -1,0 +1,206 @@
+:root {
+  --text-color: #828282;
+  --border-color: #e0e0e0;
+  --primary-color: #2f80ed;
+}
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  color: #222;
+  height: 100vh;
+  /* background-image: url(./images/flowerPlant.jpeg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  max-width: 600px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 24px;
+  height: 100%;
+}
+/*  remember max-width not width  */
+
+.register-form {
+  background: white;
+  grid-column: 6/12;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px #00000040;
+  font-weight: 700;
+}
+
+.behold {
+  grid-column: 1/5;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sub-heading {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-color);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.input {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input label {
+  font-size: 12px;
+  color: var(--text-color);
+  display: block;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  outline: none;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.name .input:last-child {
+  margin-bottom: 0;
+}
+
+.date-of-birth {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+}
+
+.input input {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  outline: none;
+  padding: 0;
+  height: 28px;
+}
+
+.dropdown select {
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  outline: none;
+}
+
+.date-of-birth-heading {
+  margin: 0;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  transition: all 400ms ease-in-out;
+  width: 0;
+}
+
+.input input:focus ~ .input-indicator {
+  width: 100%;
+  left: 0;
+  background-color: var(--primary-color);
+}
+/* .input-indicator is sibling with input and came after  input */
+
+/* outline: similar to border except that 
+1: It always goes around all the sides , you can't specify particular side 
+2: It's not a part of the box model, so it won't affect the position of the element or adjacent element */
+
+.dropdown label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.consents {
+  font-size: 12px;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 10px 24px;
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 660px) {
+  .behold {
+    display: none;
+  }
+
+  .register-form {
+    grid-column: 1 / span 12;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+    padding: 0;
+  }
+
+  .content {
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .consents {
+    margin: 0;
+  }
+}
+
+.background-over {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
